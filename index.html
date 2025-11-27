@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Jewelry Box Experience</title>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+    <script src="components.js"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
+        }
+        #title {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+            z-index: 1000;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        #close-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            display: none;
+            z-index: 1000;
+            transition: background 0.3s;
+        }
+        #close-button:hover {
+            background: rgba(0,0,0,0.9);
+        }
+    </style>
+</head>
+<body>
+    <div id="title">Luxury Jewelry Box Experience</div>
+    <button id="close-button">Close</button>
+    <a-scene>
+        <!-- Environment for reflections -->
+        <a-entity environment="preset: forest; groundColor: #445; grid: none;"></a-entity>
+
+        <!-- Jewelry Box -->
+        <a-box id="jewelry-box" position="0 0 -5" width="5" height="2" depth="3" color="#8B4513" material="metalness: 0.5; roughness: 0.8;"></a-box>
+
+        <!-- Rings -->
+        <a-entity id="ring1" geometry="primitive: torus; radius: 0.6; radiusTubular: 0.1;" position="-1.5 0.7 -4" material="color: #FFD700; metalness: 1; roughness: 0;" focus-interaction drag-rotate></a-entity>
+        <a-entity id="ring2" geometry="primitive: torus; radius: 0.6; radiusTubular: 0.1;" position="0 0.7 -4" material="color: #C0C0C0; metalness: 1; roughness: 0;" focus-interaction drag-rotate></a-entity>
+        <a-entity id="ring3" geometry="primitive: torus; radius: 0.6; radiusTubular: 0.1;" position="1.5 0.7 -4" material="color: #B87333; metalness: 1; roughness: 0;" focus-interaction drag-rotate></a-entity>
+
+        <!-- Camera -->
+        <a-camera position="0 1.6 0"></a-camera>
+    </a-scene>
+</body>
+</html>
